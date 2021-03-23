@@ -103,7 +103,7 @@ export default function Principal ()
                 transform: scale(1.1);
         }
 
-        @media screen and (max-width: 600px)
+        @media screen and (max-width: 700px)
         {
             span
             {
