@@ -11,7 +11,7 @@ O backend está dividido nos pacotes :
 
 No frontend foram utilizadas dependencias como styled-components e axios, sendo assim, insira o comando 
   ### `npm install` 
-  para fazer as instalações necessárias e então pode rodar a aplicação com 
+  para fazer as instalações necessárias e então pode rodar a aplicação React com 
   ### `npm start`
   
   Na inicialização do front o serviço deve já estar disponível para que a interface possa acessá-lo pelas rotas disponíveis com a ajuda do axios.
