@@ -62,7 +62,7 @@ public class Car
 	}
 	
 	//Odenar pelo valor total das peças
-	public float valorDagamed()
+	public float valueDamaged()
 	{
 		float value = 0;
 		for(Part part:parts)
@@ -118,10 +118,10 @@ public class Car
 
 		        @Override
 		        public int compare(Car e1, Car e2) {
-		    		if(e1.valorDagamed() - e2.valorDagamed() == 0)
+		    		if(e1.valueDamaged() - e2.valueDamaged() == 0)
 		    		{
 		    			return 0;
-		    		}else if ((e1.valorDagamed() - e2.valorDagamed() >= 1))
+		    		}else if ((e1.valueDamaged() - e2.valueDamaged() >= 1))
 		    		{
 		    			return -1;
 		    		} 
