@@ -14,7 +14,8 @@ const StyledTable = styled.table`
   th {
     border: none;
     width:33%;
-    text-transform: capitalize; 
+    text-transform: capitalize;
+    padding:0.1rem; 
   }
 
   th{
@@ -22,8 +23,7 @@ const StyledTable = styled.table`
   }
 
   td {
-    text-align:center;
-    
+    text-align:center;   
   }
   
   tbody {
@@ -73,6 +73,7 @@ const StyledTable = styled.table`
 const Container = styled.div`
   grid-column:2/5;
   grid-row:4;
+  overflow-y: hidden;
 `;
 
 export const Table = ({data,titles,titleTable}) => {

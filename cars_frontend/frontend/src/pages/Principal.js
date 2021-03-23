@@ -24,7 +24,7 @@ export default function Principal ()
         const cars = await api.getCars();
         setInfoList(cars);
         setCurrentSelection(1); 
-        setTitle("All Cars");
+        setTitle("Todos os veículos");
         setTitleList(Object.keys(cars[0]));
     }
 
@@ -33,7 +33,7 @@ export default function Principal ()
         const dados= await api.getDamagedCars();
         setInfoList(dados);
         setCurrentSelection(3);
-        setTitle("Damaged Cars soted by the value of damaged parts");
+        setTitle("Veículos dafinicados ornedados pelo valor dos danos");
         setTitleList(Object.keys(dados[0]));
     }
 
@@ -43,7 +43,7 @@ export default function Principal ()
         const dados= await api.getAllCarsByPartsValue();
         setInfoList(dados);
         setCurrentSelection(2);
-        setTitle("Cars soted by the value of parts");
+        setTitle("Veículos ordenados pelo valor total das peças");
         setTitleList(Object.keys(dados[0]));
     }
 
@@ -52,7 +52,7 @@ export default function Principal ()
         const dados= await api.getDamagedParts();
         setInfoList(dados);
         setCurrentSelection(4);
-        setTitle("Parts soted by the number of damaged parts");
+        setTitle("Peças ordenadas pela quantidade danificada");
         setTitleList(Object.keys(dados[0]));
     }
 
@@ -60,6 +60,7 @@ export default function Principal ()
         width:100vw;
         height:100vh;
         display:grid;
+        min-width:350px;
         grid-template-columns:8em 1fr 1fr 1fr 8em;
         grid-template-rows:1rem 7em 1rem 1fr 1rem;
         background-image:linear-gradient(to bottom right, #ffffff, #e2f6f5);
@@ -67,7 +68,7 @@ export default function Principal ()
 
         @media screen and (max-width: 700px) {
             grid-template-columns:1em 1fr 1fr 1fr 1em;
-            grid-template-rows:1rem 5em 1rem 1fr 1rem;
+            grid-template-rows:1rem 4em 1rem 1fr 2rem;
         }
     `;
 
@@ -80,10 +81,13 @@ export default function Principal ()
     `;
 
     const Button = styled.div`
-        width:20%;
+        width:22%;
         height:4em;
-        background-color:${props => props.index === currentSelection? "#1e7f7f" : "#59d0ce"};
+        padding:0.1rem;
+        background-color:${props => props.index === currentSelection? "#59d0ce" : "#ffffff"};
         border-radius:1rem;
+        border:0.1rem solid #59d0ce;
+        
         cursor: pointer;        
             
         span
@@ -93,7 +97,7 @@ export default function Principal ()
                 align-items:center;
                 justify-content:center;
                 text-align:center;
-                color:#ffffff;
+                color:${props => props.index === currentSelection? "#ffffff" : "#59d0ce"};
                 font-weight:bold;
         }
 
@@ -107,11 +111,7 @@ export default function Principal ()
         {
             span
             {
-                    height:100%;
-                    text-align:center;
-                    color:#ffffff;
-                    font-weight:bold;
-                    font-size: 0.7em;;
+                    font-size: 0.7em;
             }
         }        
     `;
