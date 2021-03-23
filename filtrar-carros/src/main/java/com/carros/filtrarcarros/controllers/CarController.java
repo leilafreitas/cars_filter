@@ -19,7 +19,6 @@ import com.google.gson.Gson;
 public class CarController {
 	
 	List<Car> cars = null;
-	List<Car> auxiliar = null;
 
 	public CarController() 
 	{
@@ -57,19 +56,11 @@ public class CarController {
 		return null;	
 	}
 	
-	/*
-	public List<Carro> ordenarPorTotal()
-	{
-		Collections.sort(carros, (Carro carro1, Carro carro2) -> carro1.getBrand().compareTo(carro2.getBrand()));
-		return auxiliar;
-		
-	}*/
 	
 	//Ordenar veiculos por valor das pecas
 	public List<Car> sordByTotal()
 	{
 		List<Car> auxiliar = new ArrayList<>(getCars());
-		System.out.print(auxiliar.size());
 		Collections.sort(auxiliar, Car.getPartsValue);
 		return auxiliar;
 		
@@ -85,43 +76,6 @@ public class CarController {
 		
 	}
 	
-	
-	/*//Listar as peças que mais precisam de reparo; (ordenar pela quantidade de peças danificadas)
-	public List<PartList> ordenarPorPecas()
-	{
-		
-		Comparator<List<Part>> bySize = (List<Part> obj1,List<Part> obj2) ->  Integer.valueOf(obj1.size()).compareTo(obj2.size());
-		
-		List<Map.Entry<String, Integer>> listParts = getCarros()
-					.stream()
-					.flatMap(grupo -> grupo.getParts()
-	                         .stream()
-	                         .filter(part -> part.isDamaged() == true))
-	               .collect(Collectors.groupingBy(o->o.getName()))
-	               .entrySet()
-	               .stream()
-                   .sorted(Map.Entry.<String,List<Part>>comparingByValue(bySize).reversed())
-                   .collect(Collectors.toMap(Map.Entry::getKey,entry -> entry.getValue().size(),(e1,e2)->e1,LinkedHashMap::new))
-                   .entrySet()
-                   .stream()
-                   .collect(Collectors.toCollection(ArrayList::new));
-		           
-		teste();
-		return obterPartsList(listParts);
-	}
-	
-	public List<PartList> obterPartsList(List<Map.Entry<String, Integer>> lista)
-	{
-		List<PartList> listaPartes = new ArrayList<>();
-		
-		for (Map.Entry<String, Integer> entry : lista)
-		{
-			listaPartes.add(new PartList(entry.getKey(),entry.getValue()));
-		}
-		
-		return listaPartes;
-	}
-	*/
 	public List<Car> getCars()
 	{
 		if(cars != null)
