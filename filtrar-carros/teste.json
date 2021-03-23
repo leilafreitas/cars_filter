@@ -1,0 +1,194 @@
+[
+{
+    "brand": "Chevrolet",
+    "model": "Sedan",
+    "year": 2021,
+    "parts": [
+      {
+        "name": "Farol",
+        "value": 2948,
+        "damaged": true
+      },
+      {
+        "name": "Retrovisor",
+        "value": 2672,
+        "damaged": false
+      },
+      {
+        "name": "Para-brisa",
+        "value": 1993,
+        "damaged": true
+      },
+      {
+        "name": "Para-choquie",
+        "value": 1810,
+        "damaged": true
+      },
+      {
+        "name": "Teto solar",
+        "value": 2589,
+        "damaged": true
+      }
+    ]
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Hatch",
+    "year": 2019,
+    "parts": [
+      {
+        "name": "Farol",
+        "value": 1485,
+        "damaged": false
+      },
+      {
+        "name": "Retrovisor",
+        "value": 1225,
+        "damaged": true
+      },
+      {
+        "name": "Para-brisa",
+        "value": 1022,
+        "damaged": false
+      },
+      {
+        "name": "Para-choquie",
+        "value": 1369,
+        "damaged": true
+      },
+      {
+        "name": "Teto solar",
+        "value": 1646,
+        "damaged": false
+      }
+    ]
+  },
+  {
+    "brand": "Jeep",
+    "model": "4x4",
+    "year": 2018,
+    "parts": [
+      {
+        "name": "Farol",
+        "value": 2611,
+        "damaged": false
+      },
+      {
+        "name": "Retrovisor",
+        "value": 2272,
+        "damaged": true
+      },
+      {
+        "name": "Para-brisa",
+        "value": 1307,
+        "damaged": false
+      },
+      {
+        "name": "Para-choquie",
+        "value": 984,
+        "damaged": false
+      },
+      {
+        "name": "Teto solar",
+        "value": 2988,
+        "damaged": false
+      }
+    ]
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Hatch",
+    "year": 2021,
+    "parts": [
+      {
+        "name": "Farol",
+        "value": 2793,
+        "damaged": false
+      },
+      {
+        "name": "Retrovisor",
+        "value": 1213,
+        "damaged": false
+      },
+      {
+        "name": "Para-brisa",
+        "value": 1122,
+        "damaged": false
+      },
+      {
+        "name": "Para-choquie",
+        "value": 1114,
+        "damaged": true
+      },
+      {
+        "name": "Teto solar",
+        "value": 966,
+        "damaged": false
+      }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "model": "Conversível",
+    "year": 2021,
+    "parts": [
+      {
+        "name": "Farol",
+        "value": 1798,
+        "damaged": false
+      },
+      {
+        "name": "Retrovisor",
+        "value": 2658,
+        "damaged": true
+      },
+      {
+        "name": "Para-brisa",
+        "value": 2079,
+        "damaged": false
+      },
+      {
+        "name": "Para-choquie",
+        "value": 1346,
+        "damaged": false
+      },
+      {
+        "name": "Teto solar",
+        "value": 2753,
+        "damaged": false
+      }
+    ]
+  },
+  {
+    "brand": "Fiat",
+    "model": "Conversível",
+    "year": 2018,
+    "parts": [
+      {
+        "name": "Farol",
+        "value": 2626,
+        "damaged": false
+      },
+      {
+        "name": "Retrovisor",
+        "value": 2884,
+        "damaged": false
+      },
+      {
+        "name": "Para-brisa",
+        "value": 2012,
+        "damaged": false
+      },
+      {
+        "name": "Para-choquie",
+        "value": 1927,
+        "damaged": false
+      },
+      {
+        "name": "Teto solar",
+        "value": 1280,
+        "damaged": true
+      }
+    ]
+  }
+]
