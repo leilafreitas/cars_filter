@@ -65,7 +65,7 @@ export default function Principal ()
         background-image:linear-gradient(to bottom right, #ffffff, #e2f6f5);
         overflow:hidden;
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
             grid-template-columns:1em 1fr 1fr 1fr 1em;
             grid-template-rows:1rem 5em 1rem 1fr 1rem;
         }
