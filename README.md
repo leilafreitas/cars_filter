@@ -13,3 +13,5 @@ No frontend foram utilizadas dependencias como styled-components e axios, sendo 
   ### `npm install` 
   para fazer as instalações necessárias e então pode rodar a aplicação com 
   ### `npm start`
+  
+  Na inicialização do front, o serviço deve já estar disponível para que a interface possa acessá-lo pelas rotas com a ajuda do axios.
