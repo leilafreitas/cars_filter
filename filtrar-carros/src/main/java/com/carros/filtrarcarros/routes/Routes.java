@@ -13,6 +13,10 @@ import com.carros.filtrarcarros.model.PartList;
 
 import java.util.*;
 
+
+/**
+ * Rotas para acesso no frontend
+ * */ 
 @RestController
 @RequestMapping("/api/cars")
 public class Routes {
