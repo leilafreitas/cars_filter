@@ -26,7 +26,7 @@ export default {
     },
 
     getDamagedCars:async()=>{
-        const response = await axios.get(`${BASE}/sdamagedcars`);
+        const response = await axios.get(`${BASE}/damagedcars`);
         if(response.data){
             const dados = response.data.map(function(obj) {
                 return { brand: obj.brand, model: obj.model, year:obj.year};
