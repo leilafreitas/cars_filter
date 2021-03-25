@@ -1,149 +1,125 @@
 package com.carros.filtrarcarros.model;
+
 import java.util.Comparator;
 import java.util.List;
- 
 
-public class Car 
-{
+public class Car {
 
 	private String brand;
 	private String model;
 	private int year;
 	private List<Part> parts;
-	
-	Car(){}
-	
-	Car(String brand, String model, int year, List<Part> parts)
-	{
+
+	Car() {
+	}
+
+	Car(String brand, String model, int year, List<Part> parts) {
 		this.brand = brand;
 		this.model = model;
 		this.year = year;
 		this.parts = parts;
 	}
 
-	public String getBrand()
-	{
+	public String getBrand() {
 		return brand;
 	}
 
-	public void setBrand(String brand) 
-	{
+	public void setBrand(String brand) {
 		this.brand = brand;
 	}
 
-	public String getModel() 
-	{
+	public String getModel() {
 		return model;
 	}
 
-	public void setModel(String model)
-	{
+	public void setModel(String model) {
 		this.model = model;
 	}
 
-	public int getYear() 
-	{
+	public int getYear() {
 		return year;
 	}
 
-	public void setYear(int year)
-	{
+	public void setYear(int year) {
 		this.year = year;
 	}
 
-	public List<Part> getParts() 
-	{
+	public List<Part> getParts() {
 		return parts;
 	}
 
-	public void setParts(List<Part> parts)
-	{
+	public void setParts(List<Part> parts) {
 		this.parts = parts;
 	}
-	
-	//Odenar pelo valor total das peças
-	public float valorDagamed()
-	{
+
+	// Odenar pelo valor total das peças
+	public float valueDamaged() {
 		float value = 0;
-		for(Part part:parts)
-		{
-			if(part.isDamaged()) {
+		for (Part part : parts) {
+			if (part.isDamaged()) {
 				value = value + part.getValue();
 			}
-			
+
 		}
 		return value;
 	}
-	
-	public int parts()
-	{
+
+	public int parts() {
 		int value = 0;
-		for(Part part:parts)
-		{
-			if(part.isDamaged())
-			{
-				value =value + 1;
+		for (Part part : parts) {
+			if (part.isDamaged()) {
+				value = value + 1;
 			}
 		}
 		return value;
 	}
 
-	public float value()
-	{
+	public float value() {
 		float value = 0;
-		for(Part part:parts)
-		{
+		for (Part part : parts) {
 
 			value = value + part.getValue();
 		}
 		return value;
 	}
-	
-	  public static Comparator<Car> getPartsValue = new Comparator<Car>() {
 
-	        @Override
-	        public int compare(Car e1, Car e2) {
-	    		if(e1.value() - e2.value() == 0)
-	    		{
-	    			return 0;
-	    		}else if ((e1.value() - e2.value() >= 1))
-	    		{
-	    			return -1;
-	    		} 
-	    		return 1;
-	        }
-	    };
-	    
-		public static Comparator<Car> getDamagedPartsValue = new Comparator<Car>() {
+	public static Comparator<Car> getPartsValue = new Comparator<Car>() {
 
-		        @Override
-		        public int compare(Car e1, Car e2) {
-		    		if(e1.valorDagamed() - e2.valorDagamed() == 0)
-		    		{
-		    			return 0;
-		    		}else if ((e1.valorDagamed() - e2.valorDagamed() >= 1))
-		    		{
-		    			return -1;
-		    		} 
-		    		return 1;
-		        }
-		}; 
-	    
-	 
-	  public static Comparator<Car> sortDamagedParts = new Comparator<Car>() {
+		@Override
+		public int compare(Car e1, Car e2) {
+			if (e1.value() - e2.value() == 0) {
+				return 0;
+			} else if ((e1.value() - e2.value() >= 1)) {
+				return -1;
+			}
+			return 1;
+		}
+	};
 
-	        @Override
-	        public int compare(Car e1, Car e2) {
-	    		if(e1.parts() - e2.parts() == 0)
-	    		{
-	    			return 0;
-	    		}else if ((e1.parts() - e2.parts() >= 1))
-	    		{
-	    			return -1;
-	    		} 
-	    		return 1;
-	        }
-	    };
-	
-	
+	public static Comparator<Car> getDamagedPartsValue = new Comparator<Car>() {
+
+		@Override
+		public int compare(Car e1, Car e2) {
+			if (e1.valueDamaged() - e2.valueDamaged() == 0) {
+				return 0;
+			} else if ((e1.valueDamaged() - e2.valueDamaged() >= 1)) {
+				return -1;
+			}
+			return 1;
+		}
+	};
+
+	public static Comparator<Car> sortDamagedParts = new Comparator<Car>() {
+
+		@Override
+		public int compare(Car e1, Car e2) {
+			if (e1.parts() - e2.parts() == 0) {
+				return 0;
+			} else if ((e1.parts() - e2.parts() >= 1)) {
+				return -1;
+			}
+			return 1;
+		}
+	};
+
 }

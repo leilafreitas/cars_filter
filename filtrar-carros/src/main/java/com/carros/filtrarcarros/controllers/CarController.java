@@ -17,75 +17,67 @@ import com.carros.filtrarcarros.model.Car;
 import com.google.gson.Gson;
 
 public class CarController {
-	
-	List<Car> cars = null;
 
-	public CarController() 
-	{
-	  cars = getCars();
-	}
-	
-	private static CarController _carsController;
-	
-	public static CarController newInstance()
-	{
-		
-		if(_carsController == null)
-		{
-			_carsController = new CarController();
+	private static CarController instance;
+
+	public static CarController newInstance() {
+
+		if (instance == null) {
+			instance = new CarController();
 		}
-		return _carsController;
-		
+		return instance;
+
 	}
 	
-	public List<Car> findCars()
-	{
+	private List<Car> cars = getCars();
+
+	public List<Car> findCars() {
 		Gson gson = new Gson();
-		try
-		{
+		
+		try {
 			Path paths = Paths.get("vehicles.json");
-			String content = new String(Files.readAllBytes(paths));	
+			String content = new String(Files.readAllBytes(paths));
 			Car[] car = gson.fromJson(content, Car[].class);
 			cars = Arrays.asList(car);
 			return cars;
-		}
-		catch (IOException e) 
-		{
+			
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return null;	
+		
+		return null;
 	}
-	
-	
-	//Ordenar veiculos por valor das pecas
-	public List<Car> sordByTotal()
-	{
+
+	/** 
+	 * Ordenar veiculos por valor das pecas
+	 */
+	public List<Car> sordByTotal() {
 		List<Car> auxiliar = new ArrayList<>(getCars());
 		Collections.sort(auxiliar, Car.getPartsValue);
 		return auxiliar;
-		
+
 	}
-	
-	
-	//Ordenar veiculos que precisam de reparo pelo valor das pecas danificadas
-	public List<Car> damagedCars()
-	{
-		List<Car> auxiliar = getCars().stream().filter(car -> car.parts()>0).collect(Collectors.toList());
+
+	/**
+	 * Ordenar veiculos que precisam de reparo pelo valor das pecas danificadas
+	*/
+	public List<Car> damagedCars() {
+		List<Car> auxiliar = getCars().stream().filter(car -> car.parts() > 0).collect(Collectors.toList());
 		Collections.sort(auxiliar, Car.getDamagedPartsValue);
-		return auxiliar;
 		
+		return auxiliar;
+
 	}
-	
-	public List<Car> getCars()
-	{
-		if(cars != null)
-		{
+
+	public List<Car> getCars() {
+		
+		if (cars != null) {
 			return cars;
 		}
 
 		cars = findCars();
+		
 		return cars;
 	}
-		
 
 }
