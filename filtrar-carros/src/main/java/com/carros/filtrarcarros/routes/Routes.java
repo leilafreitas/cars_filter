@@ -25,24 +25,28 @@ public class Routes {
 	@CrossOrigin
 	@GetMapping("/allcars")
 	public List<Car> listcars() {
+		
 		return CarController.newInstance().getCars();
 	}
 
 	@CrossOrigin
 	@GetMapping("/allcarssorted")
 	public List<Car> bytotalvalue() {
+		
 		return CarController.newInstance().sordByTotal();
 	}
 
 	@CrossOrigin
 	@GetMapping("/damagedcars")
 	public List<Car> bypartvalue () {
+		
 		return CarController.newInstance().damagedCars();
 	}
 
 	@CrossOrigin
 	@GetMapping("/damagedparts")
 	public List<PartList> listparts() {
+		
 		return partController.sortParts();
 	}
 }
