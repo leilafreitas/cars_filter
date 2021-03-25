@@ -20,6 +20,7 @@ import java.util.*;
 @RestController
 @RequestMapping("/api/cars")
 public class Routes {
+	
 	PartController partController = new PartController();
 
 	@CrossOrigin
@@ -30,23 +31,25 @@ public class Routes {
 	}
 
 	@CrossOrigin
-	@GetMapping("/allcarssorted")
+	@GetMapping("/sortedcars")
 	public List<Car> bytotalvalue() {
 		
 		return CarController.newInstance().sordByTotal();
 	}
 
 	@CrossOrigin
-	@GetMapping("/damagedcars")
+	@GetMapping("/sdamagedcars")
 	public List<Car> bypartvalue () {
 		
 		return CarController.newInstance().damagedCars();
+		
 	}
 
 	@CrossOrigin
-	@GetMapping("/damagedparts")
+	@GetMapping("/listparts")
 	public List<PartList> listparts() {
 		
 		return partController.sortParts();
+		
 	}
 }

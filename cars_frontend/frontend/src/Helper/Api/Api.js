@@ -14,7 +14,7 @@ export default {
     },
 
     getAllCarsByPartsValue:async()=>{
-        const response = await axios.get(`${BASE}/allcarssorted`);
+        const response = await axios.get(`${BASE}/sortedcars`);
         if(response.data){
             const dados = response.data.map(function(obj) {
                 return { brand: obj.brand, model: obj.model, year:obj.year};
@@ -26,7 +26,7 @@ export default {
     },
 
     getDamagedCars:async()=>{
-        const response = await axios.get(`${BASE}/damagedcars`);
+        const response = await axios.get(`${BASE}/sdamagedcars`);
         if(response.data){
             const dados = response.data.map(function(obj) {
                 return { brand: obj.brand, model: obj.model, year:obj.year};
@@ -36,7 +36,7 @@ export default {
     },
 
     getDamagedParts:async()=>{
-        const response = await axios.get(`${BASE}/damagedparts`);
+        const response = await axios.get(`${BASE}/listparts`);
         if(response.data){
             return(response.data);
         }     
